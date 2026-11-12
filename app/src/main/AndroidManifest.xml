@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Serve per poter vedere se le app FM del produttore sono installate (Android 11+) -->
-    <queries>
-        <package android:name="com.sec.android.app.fm" />
-        <package android:name="com.samsung.android.app.fm" />
-        <package android:name="com.caf.fmradio" />
-        <package android:name="com.android.fmradio" />
-        <package android:name="com.mediatek.fmradio" />
-        <package android:name="com.miui.fm" />
-    </queries>
+    <!-- Serve alla diagnostica per elencare le app FM installate -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
 
     <application
         android:label="FM RDS"
         android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
+
+        <!-- Librerie FM del produttore (tentativi: se mancano, nessun problema) -->
+        <uses-library android:name="com.samsung.media.fmradio" android:required="false" />
+        <uses-library android:name="qcom.fmradio" android:required="false" />
+        <uses-library android:name="com.broadcom.fm" android:required="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

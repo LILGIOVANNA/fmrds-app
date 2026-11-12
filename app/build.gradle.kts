@@ -11,8 +11,8 @@ android {
         applicationId = "app.fmrds"
         minSdk = 26          // Galaxy J6 nasce con Android 8.0
         targetSdk = 34
-        versionCode = 1
-        versionName = "0.1"
+        versionCode = 2
+        versionName = "0.2"
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
